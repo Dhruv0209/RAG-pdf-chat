@@ -1,59 +1,108 @@
-Hybrid RAG Chat with PDFs 📄🤖
+# 📄 Hybrid RAG Chat with PDFs 🤖
 
-A high-performance RAG (Retrieval-Augmented Generation) application using **Hybrid Search** and **Llama 3.1** via Groq.
+A high-performance **Retrieval-Augmented Generation (RAG)** application using **Hybrid Search** and **Llama 3.1 via Groq** for fast and accurate document-based Q&A.
+
+---
 
 ## 🚀 Key Features
-* **Hybrid Retrieval:** Combines BM25 (keyword search) and ChromaDB (vector search) for 20% better context accuracy.
-* **History-Aware:** Remembers previous context to handle follow-up questions.
-* **Fast Inference:** Powered by Groq's LPUs for near-instant responses.
+
+* **Hybrid Retrieval:** Combines BM25 (keyword search) + ChromaDB (vector search) for improved accuracy
+* **Conversational Memory:** Handles follow-up questions using chat history
+* **Source Attribution:** Displays document sources for transparency
+* **Fast Inference:** Powered by Groq LPUs for near real-time responses
+* **Multi-PDF Support:** Query across multiple uploaded documents
+
+---
 
 ## 🛠️ Tech Stack
-- **LLM:** Meta Llama 3.1 8B (via Groq)
-- **Framework:** LangChain
-- **Vector Store:** ChromaDB
-- **Embeddings:** HuggingFace `all-MiniLM-L6-v2`
-- **Frontend:** Streamlit
+
+* **LLM:** Meta Llama 3.1 (via Groq)
+* **Framework:** LangChain
+* **Vector Store:** ChromaDB
+* **Embeddings:** HuggingFace (`all-MiniLM-L6-v2`)
+* **Frontend:** Streamlit
+
+---
 
 ## 🏁 Getting Started
-1. Clone the repo: `git clone https://github.com/yourusername/your-repo-name.git`
-2. Install dependencies: `pip install -r requirements.txt`
-3. Create a `.env` file with your `GROQ_API_KEY`.
-4. Run the app: `streamlit run app.py`
-5. Push to GitHub
-Open your terminal in the project folder and run these commands:
 
-Bash
-# Initialize the repository
-git init
+### 1. Clone the Repository
 
-# Add all files (the .gitignore will skip your private keys)
-git add .
+```bash
+git clone https://github.com/your-username/rag-pdf-chat.git
+cd rag-pdf-chat
+```
 
-# Commit your changes
-git commit -m "Initial commit: Hybrid RAG with Streamlit and Groq"
+### 2. Install Dependencies
 
-# Create a new repo on GitHub.com, then link it:
-git remote add origin https://github.com/yourusername/your-repo-name.git
+```bash
+pip install -r requirements.txt
+```
 
-# Push to the main branch
-git branch -M main
-git push -u origin main
-🌟 The "Ops" Extra Credit
-If you want to show off your MLOps skills, add a Dockerfile. This proves you understand how to containerize AI applications.
+### 3. Setup Environment Variables
 
-Create a file named Dockerfile:
+Create a `.env` file:
 
-Dockerfile
-FROM python:3.10-slim
+```env
+GROQ_API_KEY=your_api_key_here
+HF_TOKEN=your_huggingface_token (optional)
+```
 
-WORKDIR /app
+### 4. Run the Application
 
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+```bash
+streamlit run app.py
+```
 
-COPY . .
+---
 
-EXPOSE 8501
+## 📂 Project Structure
 
-CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
-Once this is pushed, your repository will look like a production-ready tool! Do you have a GitHub account set up already, or do you need help with the SSH keys?
+```
+rag-pdf-chat/
+│
+├── app.py
+├── requirements.txt
+├── .gitignore
+├── README.md
+```
+
+---
+
+## 💡 Example Use Cases
+
+* Ask questions from research papers
+* Summarize PDFs
+* Extract key insights from documents
+* Conversational querying over knowledge base
+
+---
+
+## ⚠️ Notes
+
+* Do NOT upload `.env` file to GitHub
+* Add `.env` in `.gitignore`
+* Use a valid Groq API key
+
+---
+
+## ⭐ Future Improvements
+
+* Add streaming responses
+* Deploy on Streamlit Cloud / AWS
+* Add agent-based workflows
+* Implement evaluation metrics
+
+---
+
+## 🧠 About
+
+This project demonstrates a **production-ready GenAI system** using:
+
+* Hybrid Retrieval (semantic + keyword)
+* Context-aware conversations
+* Efficient LLM usage
+
+---
+
+## 
